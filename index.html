@@ -1,368 +1,48 @@
 <!doctype html>
 <html>
-<head>
+  <head>
     <title>Tic-Tae-Toe</title>
-
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<style>
-
-.game
-{
-  background-color: #AFEEEE;
-}
-.heading
-{
-  text-align: center;
-  font-family: Sans-serif;
-  color: #FF1493;
-}
-.rules
-{
-  font-family: Sans-serif;
-  margin-left: 23px;
-  color: #DC143C;
-}
-.instructions
-{
-  font-style: italic;
-  font-family: Sans-serif;
-  color: #FA8072;
-}
-.play
-{
-  text-align: center;
-  font-family: Sans-serif;
-  margin-top: 100px;
-  color: #FF1493;
-}
-.information
-{
-  margin-top: 70px;
-  margin-left: 350px;
-  font-family: Sans-serif;
-  color: #FF6347;
-}
-#name1
-{
-  margin-left: 350px;
-  font-family: Sans-serif;
-  background-color: #F5DEB3;
-  padding: 5px 0px 5px 10px;
-}
-#name2
-{
-  margin-left: 20px;
-  font-family: Sans-serif;
-  background-color: #F5DEB3;
-  padding: 5px 0px 5px 10px;
-}
-#display
-{
-  margin-top: 50px;
-  margin-left: 420px;
-}
-#display2,#display1
-
-  {
-    font-weight: bold;
-    font-family: Sans-serif;
-    color: #000000;
-    font-size: 20px;
-  }
-
-#mybutton,#mybutton1
-{
-  margin-top: 50px;
-
-  font-family: Sans-serif;
-  font-weight: bold;
-  color: #FF0000;
-  background-color: #FFE4C4;
-  font-size: 20px;
-}
-#mybutton
-{
-  padding: 10px 50px 10px 50px;
-  margin-left: 350px;
-}
-#mybutton1
-{
-  padding: 10px 30px 10px 30px;
-  margin-left: 20px;
-}
-
-#main1
-{
-  margin-left: 360px;
-  margin-top: 50px;
-}
-#main2
-{
-  margin-left: 484px;
-  margin-top: -368px;
-}
-#main3
-{
-  margin-left: 608px;
-  margin-top: -368px;
-}
-
-#box1,#box2,#box3,#box4,#box5,#box6,#box7,#box8,#box9
-{
-  width: 120px;
-  height: 120px;
-  border: 4px solid black;
-  background-color: none;
-  text-align: center;
-  font-size: 100px;
-  color: #8B008B;
-}
-
-#box1,#box4,#box2,#box5
-{
-  border-left: none;
-  border-top: none;
-}
-
-#box3,#box6
-{
-  border-left: none;
-  border-top: none;
-  border-right: none;
-}
-
-#box7,#box8,#box9
-{
-  border-left: none;
-  border-top: none;
-  border-bottom: none;
-}
-
-#box9
-{
-  border-right: none;
-}
-
-#win
-{
-  text-align: center;
-  font-size: 30px;
-  font-family: Sans-serif;
-  color: #FF1493;
-}
-</style>
-</head>
-
-<body class="game">
-
-<h1 class="heading">Tic-Tac-Toe-Game</h1>
-<h2 class="rules">Rules</h2>
-<ul class="instructions">
-  <li>The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.</li>
-  <li>When all 9 squares are full, the game is over.</li>
-  <li><u>"O"</u> stands for Player1 and <u>"X"</u> stands for Player2.</li>
-  <li>Player 1 will start the game.</li>
-</ul>
-<h1 class="play">Let's Play!</h1>
-<h3 class="information">Enter the names of </h3>
-<input type="text" id="name1" placeholder="PLAYER 1"/>
-<input type="text" id="name2" placeholder="PLAYER 2"/>
-<br></br>
-<button id="mybutton">START</button>
-<button id="mybutton1">RESTART</button>
-
-<ul id="display">
-  <li id="display1"></li>
-  <li id="display2"></li>
-</ul>
-
-<p id="win"></p>
-<div id="main1">
- <div id="box1"></div>
- <div id="box4"></div>
- <div id="box7"></div>
-</div>
-
-<div id="main2">
-  <div id="box2"></div>
-  <div id="box5"></div>
-  <div id="box8"></div>
-</div>
-
-<div id="main3">
-  <div id="box3"></div>
-  <div id="box6"></div>
-  <div id="box9"></div>
-</div>
-
-
-
-<script type="text/javascript">
-
-var b;
-var i=0;
-var k=0;
-var Array=[" "," "," "," "," "," "," "," "," "];
-var Player1;
-var Player2;
-var b1;
-var b2;
-var b3;
-var d1;
-var d2;
-var d3;
-
-function store(k1,k2,k3,l,box1,box2,box3)
-{
-  if(Array[k1]==l&&Array[k2]==l&&Array[k3]==l)
-  {
-    document.getElementById(box1).style.backgroundColor="orange";
-    document.getElementById(box2).style.backgroundColor="orange";
-    document.getElementById(box3).style.backgroundColor="orange";
-    d1=box1;
-    d2=box2;
-    d3=box3;
-  return(1);
-}
-else {
-  return(0);
-}
-}
-function play()
-{
-document.getElementById("mybutton").onclick=function()
-{
-  Player1=((document.getElementById("name1").value)!="")?(document.getElementById("name1").value):"Player1";
-  Player2=((document.getElementById("name2").value)!="")?(document.getElementById("name2").value):"Player2";
-  document.getElementById("display");
-  document.getElementById("display1").innerHTML="Player 1 :"+Player1;
-  document.getElementById("display2").innerHTML="Player 2 :"+Player2;
-  click("box1");
-  click("box2");
-  click("box3");
-  click("box4");
-  click("box5");
-  click("box6");
-  click("box7");
-  click("box8");
-  click("box9");
-}
-
-function winner(l)
-{
-if(store(0,1,2,l,"box1","box2","box3")==1)
-{
-  return(1);
-}
-else if(store(3,4,5,l,"box4","box5","box6")==1)
-{
-    return(1);
-}
-else if(store(6,7,8,l,"box7","box8","box9")==1)
-{
-    return(1);
-}
-else if(store(0,3,6,l,"box1","box4","box7")==1)
-{
-    return(1);
-}
-else if(store(1,4,7,l,"box2","box5","box8")==1)
-{
-    return(1);
-}
-else if(store(2,5,8,l,"box3","box6","box9")==1)
-{
-    return(1);
-}
-else if(store(0,4,8,l,"box1","box5","box9")==1)
-{
-    return(1);
-}
-else if(store(2,4,6,l,"box3","box5","box7")==1)
-{
-    return(1);
-}
-  else {
-    return(0);
-  }
-}
-
-function click(box)
-{
-document.getElementById(box).onclick=function()
-{
-  b=box.substr(3,1);
-  if(Array[b-1]==" ")
-  {
-  if(i%2==0)
-  {
-    document.getElementById(box).innerHTML="O";
-    Array[b-1]="O";
-    if(i>3)
-    {
-      k=winner("O");
-      if(k==1)
-      {
-       document.getElementById("win").innerHTML="Congratulations!! Winner is "+Player1;
-      }
-    }
-  }
-  else
-  {
-   document.getElementById(box).innerHTML="X";
-   Array[b-1]="X";
-   if(i>3)
-   {
-    k=winner("X");
-    if(k==1)
-    {
-     document.getElementById("win").innerHTML="Congratulations!! Winner is "+Player2;
-    }
-   }
-  }
-  i++;
-}
-  if(i==9&&k==0)
-  {
-   document.getElementById("win").innerHTML="Draw";
-  }
-
-}
-}
-}
-
-play();
-document.getElementById("mybutton1").onclick=function()
-{
-  restart("box1");
-  restart("box2");
-  restart("box3");
-  restart("box4");
-  restart("box5");
-  restart("box6");
-  restart("box7");
-  restart("box8");
-  restart("box9");
-  document.getElementById("win").innerHTML="";
-  i=0;
-  document.getElementById(d1).style.backgroundColor="#AFEEEE";
-  document.getElementById(d2).style.backgroundColor="#AFEEEE";
-  document.getElementById(d3).style.backgroundColor="#AFEEEE";
-}
-function restart(box)
-{
-  b=box.substr(3,1);
-  Array[b-1]=" ";
-  document.getElementById(box).innerHTML="";
-}
-
-
-
-
-</script>
-
-</body>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="main.js" defer></script>
+  </head>
+  <body class="game">
+    <h1 class="heading">Tic-Tac-Toe-Game</h1>
+    <h2 class="rules">Rules</h2>
+    <ul class="instructions">
+      <li>The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.</li>
+      <li>When all 9 squares are full, the game is over.</li>
+      <li><u>"O"</u> stands for Player1 and <u>"X"</u> stands for Player2.</li>
+      <li>Player 1 will start the game.</li>
+    </ul>
+    <h1 class="play">Let's Play!</h1>
+    <h3 class="information">Enter the names of </h3>
+    <input type="text" id="name1" placeholder="PLAYER 1"/>
+    <input type="text" id="name2" placeholder="PLAYER 2"/>
+    <br></br>
+    <button id="mybutton">START</button>
+    <button id="mybutton1">RESTART</button>
+    <ul id="display">
+      <li id="display1"></li>
+      <li id="display2"></li>
+    </ul>
+    <p id="win"></p>
+    <div id="main1">
+      <div id="box1"></div>
+      <div id="box4"></div>
+      <div id="box7"></div>
+    </div>
+    <div id="main2">
+      <div id="box2"></div>
+      <div id="box5"></div>
+      <div id="box8"></div>
+    </div>
+    <div id="main3">
+      <div id="box3"></div>
+      <div id="box6"></div>
+      <div id="box9"></div>
+    </div>
+  </body>
 </html>
