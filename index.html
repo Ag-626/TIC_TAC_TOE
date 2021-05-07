@@ -215,13 +215,16 @@ var d1;
 var d2;
 var d3;
 
-function store(k1,k2,k3,l)
+function store(k1,k2,k3,l,box1,box2,box3)
 {
   if(Array[k1]==l&&Array[k2]==l&&Array[k3]==l)
   {
-  b1=k1;
-  b2=k2;
-  b3=k3;
+    document.getElementById(box1).style.backgroundColor="orange";
+    document.getElementById(box2).style.backgroundColor="orange";
+    document.getElementById(box3).style.backgroundColor="orange";
+    d1=box1;
+    d2=box2;
+    d3=box3;
   return(1);
 }
 else {
@@ -250,35 +253,35 @@ document.getElementById("mybutton").onclick=function()
 
 function winner(l)
 {
-if(store(0,1,2,l)==1)
+if(store(0,1,2,l,"box1","box2","box3")==1)
 {
   return(1);
 }
-else if(store(3,4,5,l)==1)
+else if(store(3,4,5,l,"box4","box5","box6")==1)
 {
     return(1);
 }
-else if(store(6,7,8,l)==1)
+else if(store(6,7,8,l,"box7","box8","box9")==1)
 {
     return(1);
 }
-else if(store(0,3,6,l)==1)
+else if(store(0,3,6,l,"box1","box4","box7")==1)
 {
     return(1);
 }
-else if(store(1,4,7,l)==1)
+else if(store(1,4,7,l,"box2","box5","box8")==1)
 {
     return(1);
 }
-else if(store(2,5,8,l)==1)
+else if(store(2,5,8,l,"box3","box6","box9")==1)
 {
     return(1);
 }
-else if(store(0,4,8,l)==1)
+else if(store(0,4,8,l,"box1","box5","box9")==1)
 {
     return(1);
 }
-else if(store(2,4,6,l)==1)
+else if(store(2,4,6,l,"box3","box5","box7")==1)
 {
     return(1);
 }
@@ -303,7 +306,6 @@ document.getElementById(box).onclick=function()
       k=winner("O");
       if(k==1)
       {
-        dis();
        document.getElementById("win").innerHTML="Congratulations!! Winner is "+Player1;
       }
     }
@@ -317,7 +319,6 @@ document.getElementById(box).onclick=function()
     k=winner("X");
     if(k==1)
     {
-      dis();
      document.getElementById("win").innerHTML="Congratulations!! Winner is "+Player2;
     }
    }
@@ -358,51 +359,7 @@ function restart(box)
   document.getElementById(box).innerHTML="";
 }
 
-function dis()
-{
-  if(b1==0&&b2==1&&b3==2)
-  {
-    dis1("box1","box2","box3");
-  }
-  if(b1==3&&b2==4&&b3==5)
-  {
-    dis1("box4","box5","box6");
-  }
-  if(b1==6&&b2==7&&b3==8)
-  {
-    dis1("box7","box8","box9");
-  }
-  if(b1==0&&b2==3&&b3==6)
-  {
-    dis1("box1","box4","box7");
-  }
-  if(b1==1&&b2==4&&b3==7)
-  {
-    dis1("box2","box5","box8");
-  }
-  if(b1==2&&b2==5&&b3==8)
-  {
-    dis1("box3","box6","box9");
-  }
-  if(b1==0&&b2==4&&b3==8)
-  {
-    dis1("box1","box5","box9");
-  }
-  if(b1==2&&b2==4&&b3==6)
-  {
-    dis1("box3","box5","box7");
-  }
 
-}
-function dis1(box1,box2,box3)
-{
-  document.getElementById(box1).style.backgroundColor="orange";
-  document.getElementById(box2).style.backgroundColor="orange";
-  document.getElementById(box3).style.backgroundColor="orange";
-  d1=box1;
-  d2=box2;
-  d3=box3;
-}
 
 
 </script>
