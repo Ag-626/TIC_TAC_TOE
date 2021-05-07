@@ -1,0 +1,144 @@
+.game
+{
+  background-color: #AFEEEE;
+}
+.heading
+{
+  text-align: center;
+  font-family: Sans-serif;
+  color: #FF1493;
+}
+.rules
+{
+  font-family: Sans-serif;
+  margin-left: 23px;
+  color: #DC143C;
+}
+.instructions
+{
+  font-style: italic;
+  font-family: Sans-serif;
+  color: #FA8072;
+}
+.play
+{
+  text-align: center;
+  font-family: Sans-serif;
+  margin-top: 100px;
+  color: #FF1493;
+}
+.information
+{
+  margin-top: 70px;
+  margin-left: 350px;
+  font-family: Sans-serif;
+  color: #FF6347;
+}
+#name1
+{
+  margin-left: 350px;
+  font-family: Sans-serif;
+  background-color: #F5DEB3;
+  padding: 5px 0px 5px 10px;
+}
+#name2
+{
+  margin-left: 20px;
+  font-family: Sans-serif;
+  background-color: #F5DEB3;
+  padding: 5px 0px 5px 10px;
+}
+#display
+{
+  margin-top: 50px;
+  margin-left: 420px;
+}
+#display2,#display1
+
+  {
+    font-weight: bold;
+    font-family: Sans-serif;
+    color: #000000;
+    font-size: 20px;
+  }
+
+#mybutton,#mybutton1
+{
+  margin-top: 50px;
+
+  font-family: Sans-serif;
+  font-weight: bold;
+  color: #FF0000;
+  background-color: #FFE4C4;
+  font-size: 20px;
+}
+#mybutton
+{
+  padding: 10px 50px 10px 50px;
+  margin-left: 350px;
+}
+#mybutton1
+{
+  padding: 10px 30px 10px 30px;
+  margin-left: 20px;
+}
+
+#main1
+{
+  margin-left: 360px;
+  margin-top: 50px;
+}
+#main2
+{
+  margin-left: 484px;
+  margin-top: -368px;
+}
+#main3
+{
+  margin-left: 608px;
+  margin-top: -368px;
+}
+
+#box1,#box2,#box3,#box4,#box5,#box6,#box7,#box8,#box9
+{
+  width: 120px;
+  height: 120px;
+  border: 4px solid black;
+  background-color: none;
+  text-align: center;
+  font-size: 100px;
+  color: #8B008B;
+}
+
+#box1,#box4,#box2,#box5
+{
+  border-left: none;
+  border-top: none;
+}
+
+#box3,#box6
+{
+  border-left: none;
+  border-top: none;
+  border-right: none;
+}
+
+#box7,#box8,#box9
+{
+  border-left: none;
+  border-top: none;
+  border-bottom: none;
+}
+
+#box9
+{
+  border-right: none;
+}
+
+#win
+{
+  text-align: center;
+  font-size: 30px;
+  font-family: Sans-serif;
+  color: #FF1493;
+}
