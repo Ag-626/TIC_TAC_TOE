@@ -294,6 +294,7 @@ function click(box)
 {
 document.getElementById(box).onclick=function()
 {
+  this.style.pointerEvents="all";
   b=box.substr(3,1);
   if(Array[b-1]==" ")
   {
@@ -307,6 +308,15 @@ document.getElementById(box).onclick=function()
       if(k==1)
       {
        document.getElementById("win").innerHTML="Congratulations!! Winner is "+Player1;
+       document.getElementById("box1").style.pointerEvents="none";
+       document.getElementById("box2").style.pointerEvents="none";
+       document.getElementById("box3").style.pointerEvents="none";
+       document.getElementById("box4").style.pointerEvents="none";
+       document.getElementById("box5").style.pointerEvents="none";
+       document.getElementById("box6").style.pointerEvents="none";
+       document.getElementById("box7").style.pointerEvents="none";
+       document.getElementById("box8").style.pointerEvents="none";
+       document.getElementById("box9").style.pointerEvents="none";
       }
     }
   }
@@ -320,6 +330,15 @@ document.getElementById(box).onclick=function()
     if(k==1)
     {
      document.getElementById("win").innerHTML="Congratulations!! Winner is "+Player2;
+     document.getElementById("box1").style.pointerEvents="none";
+     document.getElementById("box2").style.pointerEvents="none";
+     document.getElementById("box3").style.pointerEvents="none";
+     document.getElementById("box4").style.pointerEvents="none";
+     document.getElementById("box5").style.pointerEvents="none";
+     document.getElementById("box6").style.pointerEvents="none";
+     document.getElementById("box7").style.pointerEvents="none";
+     document.getElementById("box8").style.pointerEvents="none";
+     document.getElementById("box9").style.pointerEvents="none";
     }
    }
   }
@@ -354,6 +373,15 @@ document.getElementById("mybutton1").onclick=function()
 }
 function restart(box)
 {
+  document.getElementById("box1").style.pointerEvents="all";
+  document.getElementById("box2").style.pointerEvents="all";
+  document.getElementById("box3").style.pointerEvents="all";
+  document.getElementById("box4").style.pointerEvents="all";
+  document.getElementById("box5").style.pointerEvents="all";
+  document.getElementById("box6").style.pointerEvents="all";
+  document.getElementById("box7").style.pointerEvents="all";
+  document.getElementById("box8").style.pointerEvents="all";
+  document.getElementById("box9").style.pointerEvents="all";
   b=box.substr(3,1);
   Array[b-1]=" ";
   document.getElementById(box).innerHTML="";
